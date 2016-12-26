@@ -14,7 +14,7 @@ def scan1(dir):
 				filelist.append(os.path.join(root,file))
 	return filelist
 def	download1(path,song_singer):
-	print song_singer
+	#print song_singer
 	cookies = urllib2.HTTPCookieProcessor()
 	opener = urllib2.build_opener(cookies)
 	song_singer1_url = urllib.quote(str(song_singer))
@@ -44,8 +44,10 @@ if __name__ == '__main__':
 	import sys
 	reload(sys)
 	sys.setdefaultencoding('utf-8')
-	path = "H:\\MUSIC\\林俊杰\\"  #歌曲路径
-	for i in scan1(path):
+	uipath = raw_input('input path of songs and click enter\n')
+	#path = r'H:\MUSIC\林俊傑' 	#歌曲路径
+	#uipath = unicode(path,"utf8")
+	for i in scan1(uipath):
 		try:
 			audiofile = TinyTag.get(i)
 			q = audiofile.title+" "+audiofile.artist
