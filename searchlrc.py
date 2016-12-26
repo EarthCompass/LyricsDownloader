@@ -44,9 +44,9 @@ if __name__ == '__main__':
 	import sys
 	reload(sys)
 	sys.setdefaultencoding('utf-8')
-	#path = input('input path of songs and click enter\n')
-	path = r'H:\MUSIC\林俊傑' 	#歌曲路径
-	uipath = unicode(path,"utf8")
+	uipath = raw_input('input path of songs and click enter\n')
+	#path = r'H:\MUSIC\林俊傑' 	#歌曲路径
+	#uipath = unicode(path,"utf8")
 	for i in scan1(uipath):
 		try:
 			audiofile = TinyTag.get(i)
